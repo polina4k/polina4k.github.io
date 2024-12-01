@@ -18,7 +18,7 @@
     </div>
     <ul class="navbar_menu">
       <li class="navbar_item">
-        <a href="index.html" class="navbar_links"> about_me </a>
+        <a href="/" class="navbar_links"> about_me </a>
       </li>
       <li class="navbar_item">
         <a href="art_portfolio.html" class="navbar_links"> art_portfolio </a>
@@ -29,7 +29,6 @@
 </nav>
 
 <section class="gallery" id="gallery">
-  <!-- Images will be dynamically added here -->
 </section>
 
 <div id="modal" class="modal" style="display:none;">
@@ -109,15 +108,12 @@
     caption.innerHTML = "";
 
     modal.onclick = function(event) {
-      // Check if the click is outside the image (the modal content)
       if (event.target === modal) {
         closeModal();
       }
     };
   }
 
-
-  // Close modal
   function closeModal() {
     document.getElementById('modal').style.display = "none";
   }
