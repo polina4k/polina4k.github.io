@@ -73,12 +73,6 @@
     color: #ff00b7;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-}
-
 
 /* Gallery Styles */
 .gallery {
