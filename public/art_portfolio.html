@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles.css" >
+  <title>Art Gallery</title>
+
+</head>
+
+<body>
+<nav class = "navbar">
+  <div class="navbar_container">
+    <div class="navbar_toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="navbar_menu">
+      <li class="navbar_item">
+        <a href="/public/about_me.html" class="navbar_links"> about_me </a>
+      </li>
+      <li class="navbar_item">
+        <a href="/public/art_portfolio.html" class="navbar_links"> art_portfolio </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<section class="gallery" id="gallery">
+  <!-- Images will be dynamically added here -->
+</section>
+
+<div id="modal" class="modal" style="display:none;">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="modalImage" class="modal-content">
+  <div id="caption"></div>
+</div>
+
+<script>
+  const folderPath = '../src/art/';
+  const imageFiles = [
+
+    '2024-07-27-0001.png',
+    'Scan 56.jpg',
+    'peeringback.jpeg',
+    'Scan 58.jpg',
+    'Scan 55.png',
+    'Scan 2.jpeg',
+    'pk1.jpg',
+    'pk2.jpg',
+    'IMG_20240113_183823_511.jpg',
+    'pk3.jpg',
+    'Scan 53.png',
+    'sideprofile.jpeg',
+    'Scan 20.jpeg',
+    'kitty.jpeg',
+    'sketch1.jpeg',
+    'Scan 9.png',
+    'Scan 23.png',
+    'Scan 5.jpeg',
+    'Untitled_Artwork 13.png',
+    'Scan_37 copy.png',
+    'Scan 51.jpeg',
+    'Scan 3.jpeg',
+    'Scan 28.jpeg',
+    'Scan 29.jpeg',
+    'bike.jpeg',
+    'Scan 14.png',
+    'Scan 10.jpeg',
+    'That space between us.png',
+    'Scan 16.png',
+    'Scan 15.png',
+    'Untitled_Artwork 12.png',
+    'sketch0.jpeg',
+    'Scan 1.jpeg',
+    'keepintouch.jpeg',
+
+
+  ];
+  const gallery = document.getElementById('gallery');
+
+  imageFiles.forEach(file => {
+    const img = document.createElement('img');
+    img.src = folderPath + file;
+    img.alt = file;
+
+    const container = document.createElement('div');
+    container.classList.add('image-container');
+    container.appendChild(img);
+    container.appendChild(img);
+
+    img.onclick = function() {
+      openModal(img.src, img.alt);
+    };
+
+    gallery.appendChild(container);
+  });
+
+
+  // Modal function to show the image
+  function openModal(src, alt) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const caption = document.getElementById('caption');
+    modal.style.display = "block";
+    modalImage.src = src;
+    caption.innerHTML = "";
+
+    modal.onclick = function(event) {
+      // Check if the click is outside the image (the modal content)
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  }
+
+
+  // Close modal
+  function closeModal() {
+    document.getElementById('modal').style.display = "none";
+  }
+</script>
+</body>
+</html>
