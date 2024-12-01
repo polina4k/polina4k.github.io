@@ -18,10 +18,10 @@
     </div>
     <ul class="navbar_menu">
       <li class="navbar_item">
-        <a href="/index.html" class="navbar_links"> about_me </a>
+        <a href="index.html" class="navbar_links"> about_me </a>
       </li>
       <li class="navbar_item">
-        <a href="/public/art_portfolio.html" class="navbar_links"> art_portfolio </a>
+        <a href="art_portfolio.html" class="navbar_links"> art_portfolio </a>
       </li>
 
     </ul>
@@ -34,7 +34,7 @@
 
 <div id="modal" class="modal" style="display:none;">
   <span class="close" onclick="closeModal()">&times;</span>
-  <img id="modalImage" class="modal-content">
+  <img id="modalImage" class="modal-content" alt = "">
   <div id="caption"></div>
 </div>
 
@@ -100,7 +100,7 @@
 
 
   // Modal function to show the image
-  function openModal(src, alt) {
+  function openModal(src) {
     const modal = document.getElementById('modal');
     const modalImage = document.getElementById('modalImage');
     const caption = document.getElementById('caption');
