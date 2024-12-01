@@ -83,7 +83,7 @@
 /* Gallery Styles */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dynamic grid */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* dynamic grid */
     gap: 10px;
     padding: 10px;
 }
@@ -96,33 +96,32 @@
 }
 
 .gallery img {
-    position: absolute; /* Position image relative to the container */
-    top: 50%; /* Move the image down */
-    left: 50%; /* Move the image to the right */
-    transform: translate(-50%, -50%); /* Center the image */
-    width: 100%; /* Ensure image covers the full container */
-    height: 100%; /* Ensure image covers the full container */
-    object-fit: cover; /* Crop the image and fill the container */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*center*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer; /* Makes it clickable for modal */
+    cursor: pointer;
 }
 
 /* Modal Styles */
 .modal {
-    display: none; /* Initially hide the modal */
-    position: fixed; /* Position the modal fixed on the screen */
-    z-index: 2; /* Ensure the modal is on top of other elements */
+    display: none;
+    position: fixed;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Allows scrolling if the modal content is too large */
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+    overflow: auto; /* allows scrolling if the modal content is too large */
+    background-color: rgba(0, 0, 0, 0.4);
 
 }
 
 .modal-content {
-
     max-width: 90%;
     max-height: 80%;
     margin: auto;
